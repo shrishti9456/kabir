@@ -35,10 +35,14 @@ class Motor_Controls:
         self.decelerate_thread = threading.Thread(target=self.decelerate, name="decelerate")
     
     def run(self):
+        
+        
         self.listener.start()
         self.decelerate_thread.start()
     
     def sendDataToNode(self):
+        
+        
         count_now = time.perf_counter()
         if count_now - self.Node_counter >= 0.5:
             self.motorspeed1 = self.forwardBackwardSpeed
@@ -156,6 +160,8 @@ class Motor_Controls:
             self.Stop()
 
     def on_release(self, key):
+        
+        
         if key == 'Key.esc':    
             return False
 
